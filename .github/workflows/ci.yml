@@ -2,27 +2,24 @@ name: C++ CI
 
 on:
   push:
-    branches: [ "ci_test" ]
+    branches: [ ci_test ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ ci_test ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Install g++
-      run: sudo apt-get update && sudo apt-get install -y g++
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y g++
 
-    - name: Build project
-      run: make
+      - name: Build
+        run: make
 
-    - name: Run program with input.txt
-      run: ./rpn < input.txt > output_ci.txt
-
-    - name: Show output
-      run: cat output_ci.txt
+      - name: Run program
+        run: ./rpn < input.txt
 
