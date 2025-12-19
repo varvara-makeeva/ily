@@ -109,7 +109,7 @@ public:
     */
     SparseVector& operator=(const SparseVector& rhs);
 
-#endif // SPARSE_VECTOR_H
+
 
     /*
         Сравнение двух векторов:
