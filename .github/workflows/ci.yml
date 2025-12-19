@@ -2,23 +2,25 @@ name: C++ CI
 
 on:
   pull_request:
-
-
+  push:
 
 jobs:
-  build:
+  sparse_vector:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install build tools
+      - name: Install compiler
         run: sudo apt-get update && sudo apt-get install -y g++
 
-      - name: Build
-        run: make
+      - name: Build sparse vector
+        run: |
+          g++ -std=c++17 sparse_vector_hw/SparseVector.cpp \
+                          sparse_vector_hw/main.cpp \
+                          -o sparse_vector
 
-      - name: Run program
-        run: ./rpn < input.txt
+      - name: Run sparse vector
+        run: ./sparse_vector
 
