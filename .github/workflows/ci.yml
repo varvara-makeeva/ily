@@ -2,24 +2,23 @@ name: C++ CI
 
 on:
   pull_request:
-    branches: [ hw-heap ]
   push:
-    branches: [ hw-heap ]
 
 jobs:
-  build:
+  heap:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install build tools
+      - name: Install compiler
         run: sudo apt-get update && sudo apt-get install -y g++
 
-      - name: Build
-        run: make
+      - name: Build heap
+        run: |
+          g++ -std=c++17 heap_hw/main.cpp -o heap
 
-      - name: Run program
-        run: ./rpn < input.txt
+      - name: Run heap
+        run: ./heap
 
