@@ -1,0 +1,5 @@
+/Users/varvara/Documents/heap_hw/build/CMakeFiles/main.dir
+/Users/varvara/Documents/heap_hw/build/CMakeFiles/tests.dir
+/Users/varvara/Documents/heap_hw/build/CMakeFiles/test.dir
+/Users/varvara/Documents/heap_hw/build/CMakeFiles/edit_cache.dir
+/Users/varvara/Documents/heap_hw/build/CMakeFiles/rebuild_cache.dir
